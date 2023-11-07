@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
         {children}
         <h4 className='text-red-600'>Tasim</h4>
         <h1 className='text-center'>Maksuda High School</h1>
+        <h3>Git new Branch Create</h3>
         </body>
     </html>
   )
