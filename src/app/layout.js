@@ -12,8 +12,7 @@ export default function RootLayout({ children }) {
       <Head/>
       <body className="relative min-h-screen">
         {children}
-        <h4 className='text-red-600'>Tasim</h4>
-        <h1 className='text-center'>Maksuda High School</h1>
+        
         </body>
     </html>
   )
