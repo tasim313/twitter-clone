@@ -1,13 +1,25 @@
+"use client"
 import Feed from '@/components/Feed'
 import Sidebar from '@/components/Sidebar'
 import Widgets from '@/components/Widgets'
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
 
 
 export default function Home() {
+
+  const [newsResults, setNewsResults] = useState(null);
+
+  useEffect(() => {
+    
+    fetch("https://saurav.tech/NewsAPI/top-headlines/category/business/us.json")
+      .then((res) => res.json())
+      .then((data) => setNewsResults(data));
+  }, []);
+
   return (
     <>
-    <main className='flex min-h-screen max-w-7xl mx-auto '>
+    <main className='flex min-h-screen  mx-auto '>
      
       {/* Sidebar */}
       <Sidebar/>
@@ -17,7 +29,7 @@ export default function Home() {
 
       {/* Widgets */}
 
-      <Widgets/>
+      <Widgets newsResults={newsResults ? newsResults.articles : []}/>
 
       {/* Modal */}
 
